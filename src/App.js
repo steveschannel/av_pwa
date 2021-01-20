@@ -1,29 +1,24 @@
-import './App.css';
-import 'fontsource-roboto';
-import { Select, MenuItem } from '@material-ui/core';
+import "./App.css";
+import "fontsource-roboto";
+import { Switch, Route } from "react-router-dom";
+import { CalculatorContainer } from "./calculator-container";
+import NavContainer from "./nav";
 
 function App() {
   return (
-    <div>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-      >
-        <MenuItem value={10}>GIZ</MenuItem>
-        <MenuItem value={20}>SABA+</MenuItem>
-        <MenuItem value={30}>Artesanal</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-      >
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
-      </Select>
-    </div>
+    <>
+      <NavContainer />
+      <div className="center">
+        <Switch>
+          <Route path="/">
+            <CalculatorContainer />
+          </Route>
+          <Route exact path="/settings">
+            hhhh
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 }
 
